@@ -11,6 +11,7 @@ import Home from './components/Home/Home';
 import Login from './components/Login/Login';
 import Header from './components/Header/Header';
 import { createContext, useState } from 'react';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 export const UserContext = createContext();
 
@@ -27,7 +28,7 @@ const [loggedInUser, setLoggedInUser] = useState({});
         <Switch>
           <Route path='/home'><Home/></Route>
           <Route path='/login'><Login/></Route>
-          <Route path='/book/:bedType'><Book/></Route>
+          <PrivateRoute path='/book/:bedType'><Book/></PrivateRoute>
           
         </Switch>
       </Router>
