@@ -18,11 +18,13 @@ export const UserContext = createContext();
 
 function App() {
 const [loggedInUser, setLoggedInUser] = useState({});
+console.log(loggedInUser);
 
   return (
 
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
-    <p>Name : {loggedInUser.name}</p>
+  
+    <p>Name : {loggedInUser.email}</p>
       <Router>
       <Header></Header>
         <Switch>
